@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.83.1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <title>Maliakkal Stores</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/checkout/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link href="form-validation.css" rel="stylesheet">
+  </head>
+  <body class="bg-light">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-blue mb-4">
+      <div class="container-fluid">
+        <div class="header-img-container container-fluid">
+          <img class="main-nav-image" src="logobig.jpeg" alt="" />
+        </div>
+  
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+    
+        </div>
+      </div>
+    </nav>
+    
+<div class="container">
+  <main>
+    
+
+    <div class="row g-5">
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3">Order Placing</h4>
+        <form class="needs-validation" novalidate id="submit-form">
+          <div class="row g-3">
+            <div class="col-12">
+              <label for="firstName" class="form-label">Name</label>
+              <input type="text" class="form-control" name="NAME" id="firstName" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Your name is required.
+              </div>
+            </div>
+
+           
+
+            <div class="col-12">
+              <label for="username" class="form-label">Mobile No</label>
+              <div class="input-group has-validation">
+                <input type="number" class="form-control" id="" name="MOBILE NO" placeholder=" " required>
+              <div class="invalid-feedback">
+                  Your mobile no is required.
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email <span class="text-muted">(Optional)</span></label>
+              <input type="email" class="form-control" id="email" name="EMAIL ID" placeholder="">
+              <div class="invalid-feedback">
+                Please enter a valid email address .
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label">Flat Or House No</label>
+              <input type="text" class="form-control" id="address" placeholder="" name="ADDRESS" required>
+              <div class="invalid-feedback">
+                Please enter your address.
+              </div>
+            </div>
+
+            <div class="col-12">Items</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" name="ITEMS" required></textarea>
+              <div class="invalid-feedback">
+                Please enter atleast one item .
+              </div>
+            </div>
+
+          </div>
+
+          <hr class="my-4"> 
+
+          <h4 class="mb-3">Payment</h4>
+
+          <div class="my-3">
+            <div class="form-check">
+              <input id="" name="PAYMENT METHOD" type="radio" value="COD" class="form-check-input" checked required>
+              <label class="form-check-label" for="">COD</label>
+            </div>
+            <div class="form-check">
+              <input id="" name="PAYMENT METHOD" type="radio" value="ONLINE" class="form-check-input" required>
+              <label class="form-check-label" for="">ONLINE</label>
+            </div>
+           
+          </div>
+
+       
+
+          <hr class="my-4">
+
+          <button class="w-100 btn btn-success  btn-lg" type="submit">Continue to checkout</button>
+        </form>
+      </div>
+    </>
+  </main>
+
+  <footer class="my-5 pt-5 text-muted text-center text-small">
+    <p class="mb-1">&copy; 2020–2021 Maliakkal Stores</p>
+    <ul class="list-inline">
+      <li class="list-inline-item"><a href="#">Privacy</a></li>
+      <li class="list-inline-item"><a href="#">Terms</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </footer>
+</div>
+
+
+<script>
+  $("#submit-form").submit((e)=>{
+      e.preventDefault()
+      $.ajax({
+          url:"https://script.google.com/macros/s/AKfycbzMHZJR79H5w6oNGgyHRxiz8-6SGn4cP7i7QtVx/exec",
+          data:$("#submit-form").serialize(),
+          method:"post",
+          success:function (response){
+              alert("Order placed successfully")
+              window.location.reload()
+              // window.location.href="submit.html"
+              
+          },
+          error:function (err){
+              alert("Something Error")
+
+          }
+      })
+  })
+</script>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      <script src="form-validation.js"></script>
+  </body>
+</html>

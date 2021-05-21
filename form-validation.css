@@ -1,0 +1,19 @@
+.container {
+  max-width: 960px;
+}
+.main-nav-image{
+  width: 365px;
+  height: auto;
+}
+.bg-blue{
+  background-color: #447bbe;
+  
+}
+
+@media (max-width:412px)
+{
+
+  .main-nav-image{
+      width: 250px;
+  }
+}
