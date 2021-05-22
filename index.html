@@ -45,7 +45,7 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-blue mb-4">
       <div class="container-fluid">
         <div class="header-img-container container-fluid">
-          <img class="main-nav-image" src="logobig.jpeg" alt="" />
+          <img class="main-nav-image " src="logobig.jpeg" alt="" />
         </div>
   
         <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -128,7 +128,7 @@
 
           <hr class="my-4">
 
-          <button class="w-100 btn btn-success  btn-lg" type="submit">Continue to checkout</button>
+          <button id="submit" class="w-100 btn btn-success  btn-lg" type="submit">Place order</button>
         </form>
       </div>
     </>
@@ -146,16 +146,20 @@
 
 
 <script>
+
+
+
   $("#submit-form").submit((e)=>{
       e.preventDefault()
+      document.getElementById("submit").disabled = true;
       $.ajax({
           url:"https://script.google.com/macros/s/AKfycbzMHZJR79H5w6oNGgyHRxiz8-6SGn4cP7i7QtVx/exec",
           data:$("#submit-form").serialize(),
           method:"post",
           success:function (response){
-              alert("Order placed successfully")
-              window.location.reload()
-              // window.location.href="submit.html"
+              // alert("Order placed successfully")
+              document.getElementById("submit").disabled = false;
+              window.location.href="submit.html"
               
           },
           error:function (err){
